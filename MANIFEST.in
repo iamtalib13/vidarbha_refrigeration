@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include vidarbha_refrigeration *.css
+recursive-include vidarbha_refrigeration *.csv
+recursive-include vidarbha_refrigeration *.html
+recursive-include vidarbha_refrigeration *.ico
+recursive-include vidarbha_refrigeration *.js
+recursive-include vidarbha_refrigeration *.json
+recursive-include vidarbha_refrigeration *.md
+recursive-include vidarbha_refrigeration *.png
+recursive-include vidarbha_refrigeration *.py
+recursive-include vidarbha_refrigeration *.svg
+recursive-include vidarbha_refrigeration *.txt
+recursive-exclude vidarbha_refrigeration *.pyc
