@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-02 23:24:23.181199",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_no",
+  "gst_applicable",
+  "from_section",
+  "company",
+  "column_break_nd4uu",
+  "gst_no",
+  "column_break_ok94t",
+  "address",
+  "column_break_tsl5z",
+  "work_phone",
+  "column_break_g8gdw",
+  "alternate_phone",
+  "item_section",
+  "item"
+ ],
+ "fields": [
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice No"
+  },
+  {
+   "fieldname": "from_section",
+   "fieldtype": "Section Break",
+   "label": "From"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company Details"
+  },
+  {
+   "depends_on": "eval:doc.gst_applicable == \"Yes\"",
+   "fetch_from": "company.gst_no",
+   "fieldname": "gst_no",
+   "fieldtype": "Data",
+   "label": "GST No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "company.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Item List"
+  },
+  {
+   "fetch_from": "company.phone",
+   "fieldname": "work_phone",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Work Phone",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "company.alternate_phone",
+   "fieldname": "alternate_phone",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Alternate Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nd4uu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ok94t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tsl5z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_g8gdw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Item List"
+  },
+  {
+   "default": "No",
+   "fieldname": "gst_applicable",
+   "fieldtype": "Select",
+   "label": "GST ?",
+   "options": "No\nYes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-03 00:19:57.632175",
+ "modified_by": "Administrator",
+ "module": "Vidarbha Refrigeration",
+ "name": "Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
